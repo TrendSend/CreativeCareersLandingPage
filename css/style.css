@@ -134,6 +134,33 @@ h1 {
     margin: 2em 0 1.5em;
     font-weight: 600;
 }
+#continue-button {
+    background: #b52e31;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    text-transform: capitalize;
+    border: 2px solid #b52e31;
+    width: 100%;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    padding: 13px 0;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+#continue-button:hover {
+	background: transparent;
+    border-color: #15d0b9;
+}
+
 .login-form input[type="submit"] {
     background: #b52e31;
     color: #fff;

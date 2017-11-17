@@ -41,10 +41,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<h2 class="sub-head-w3-agileits">Continue to <span>job offer</span></h2>
 			</div>		
 			<div class="login-form">	
-				<form action="#" method="post">
+				<form>
 <!-- 					<input type="text" name="Name" placeholder="Name" required="" /> -->
-					<input type="email" name="Email" placeholder="Email Address" required="" />
-					<input type="submit" value="Continue">
+					<input type="email" name="Email" placeholder="Email Address" required="true" id="addr" />
+					<input onclick="proceed()" id="continue-button"  value="Continue">
 				</form>	
 			</div>
 				</div> 
@@ -59,4 +59,38 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 			<!--//Copyright-->
 </body>
+
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDWQfuUgzUMYL__Scovj9zbZCAN4EgNptQ",
+    authDomain: "landing-central.firebaseapp.com",
+    databaseURL: "https://landing-central.firebaseio.com",
+    projectId: "landing-central",
+    storageBucket: "",
+    messagingSenderId: "345606747665"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+function proceed() {
+
+     if (document.getElementById("addr").value.indexOf("@") > -1) {
+     	firebase.database().ref('campaigns/jobs/' + document.getElementById("addr").value.replace(".", "_")).set({
+   			trackingid: "jobs",
+    		email: document.getElementById("addr").value
+  		}).then(function() {
+    		window.location.href='http://6f2e7pna0bfq1nc9mhyesbcrdp.hop.clickbank.net/?tid=PHOTOEL'
+  		});
+     	document.getElementById("addr").value = "";
+
+     }
+     else {
+     	document.getElementById("addr").reportValidity();
+     }
+}
+</script>
 </html>
