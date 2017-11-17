@@ -80,7 +80,7 @@ function proceed() {
 
      if (document.getElementById("addr").value.indexOf("@") > -1) {
      	firebase.database().ref('campaigns/jobs/' + document.getElementById("addr").value.replace(".", "_")).set({
-   			trackingid: "jobs",
+     		trackingid: "PHOTOEL",
     		email: document.getElementById("addr").value
   		}).then(function() {
     		window.location.href='http://6f2e7pna0bfq1nc9mhyesbcrdp.hop.clickbank.net/?tid=PHOTOEL'
