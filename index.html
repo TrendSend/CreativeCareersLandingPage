@@ -13,6 +13,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Ultra-modern Subscribe Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script
+			  src="http://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
 <!-- //Meta Tags -->
 <!-- font-awesome-stylesheet -->
 <link href="css/font-awesome.css" rel="stylesheet"> 
@@ -75,23 +79,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </script>
 
 <script>
-	// $.getJSON('//freegeoip.net/json/?callback=?', function(data) {
-	// 	console.log(JSON.stringify(data, null, 2));
-	// 	firebase.database().ref('campaigns/jobs/visitors' + data.ip.replace(".", "_")).set(data);
-	// });
-
-	xhr = new XMLHttpRequest;
-xhr.onreadystatechange = function() {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-        JSON.parse(xhr.responseText);
-        console.log(xhr.responseText);
-    }
-    else {
-    	console.log(xhr);
-    }
-}
-xhr.open("GET", 'https://freegeoip.net/json/?callback=?')
-xhr.send();
+	$.getJSON('https://freegeoip.net/json/?callback=?', function(data) {
+		console.log(JSON.stringify(data, null, 2));
+		firebase.database().ref('campaigns/jobs/visitors' + data.ip.replace(".", "_")).set(data);
+	});
 </script>
 
 
