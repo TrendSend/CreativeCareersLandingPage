@@ -13,7 +13,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Ultra-modern Subscribe Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" ntegrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" ntegrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
 <!-- //Meta Tags -->
 <!-- font-awesome-stylesheet -->
 <link href="css/font-awesome.css" rel="stylesheet"> 
@@ -75,12 +75,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   firebase.initializeApp(config);
 </script>
 
-<script>
-	$.getJSON('https://freegeoip.net/json/?callback=?', function(data) {
+<!-- <script>
+$( document ).ready(function() {
+	console.log("Ready")
+  	$.getJSON('//freegeoip.net/json/?callback=?', function(data) {
+  		console.log("Called")
 		console.log(JSON.stringify(data, null, 2));
 		firebase.database().ref('campaigns/jobs/visitors' + data.ip.replace(".", "_")).set(data);
 	});
-</script>
+});
+</script> -->
 
 
 <script>
